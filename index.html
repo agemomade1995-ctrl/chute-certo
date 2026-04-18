@@ -1,0 +1,3161 @@
+<!DOCTYPE html><html lang="pt-PT"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="IjFmYWM4ZDY1NzhjNWFmNzI2NmVjMDc3NWVhNmQyZTIxYTYyMGQ3NTEi.aeJjXQ.JtfU95Jqsg1LLOP2Hf-U9Qgir7o">
+
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B856FSXRBN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B856FSXRBN');
+    </script>
+    <title> - Sistema de TCC</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --hover-color: #0b5ed7;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1 0 auto;
+            width: 100%;
+        }
+
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            background: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+        }
+
+        .navbar-brand span {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .alert {
+            border-radius: 8px;
+            margin: 1rem auto;
+            max-width: 90%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
+        }
+
+        /* Menu Dinâmico e Responsivo */
+
+        /* Layout base do menu */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Menu quando não logado - distribuição equilibrada */
+        .navbar-nav:first-child {
+            justify-content: center;
+            flex: 1;
+        }
+
+        .navbar-nav:last-child {
+            justify-content: flex-end;
+            margin-left: auto;
+        }
+
+        /* Garantir que o menu seja sempre visível em computadores */
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .navbar-nav:first-child {
+                flex: 1;
+                justify-content: flex-start;
+                gap: 0.5rem;
+                margin-right: 1rem;
+            }
+
+            .navbar-nav:last-child {
+                flex: 0 0 auto;
+                justify-content: flex-end;
+                gap: 0.5rem;
+                margin-left: 0;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 0 0.1rem;
+                flex-shrink: 0;
+            }
+
+            .nav-link {
+                padding: 0.4rem 0.7rem !important;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+            }
+
+            .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 0.375rem;
+            }
+
+            /* Ajustar tamanho dos textos para caber melhor */
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+
+            .navbar-brand img {
+                height: 35px;
+            }
+
+            /* Garantir que o nome do usuário seja visível */
+            .navbar-nav:last-child .nav-link {
+                max-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        /* Telas muito pequenas (até 576px) */
+        @media (max-width: 575.98px) {
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+
+            .navbar-brand img {
+                height: 35px;
+            }
+
+            .nav-link {
+                padding: 0.4rem 0.8rem !important;
+                font-size: 0.9rem;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 0.2rem 0;
+            }
+
+            /* Menu não logado em telas pequenas */
+            .navbar-nav:first-child {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.3rem;
+            }
+
+            .navbar-nav:last-child {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.3rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Telas pequenas (576px - 767px) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .navbar-brand span {
+                font-size: 1.2rem;
+            }
+
+            .nav-link {
+                padding: 0.45rem 0.9rem !important;
+                font-size: 0.95rem;
+            }
+
+            /* Menu não logado em telas pequenas */
+            .navbar-nav:first-child {
+                justify-content: center;
+                gap: 0.4rem;
+            }
+
+            .navbar-nav:last-child {
+                justify-content: center;
+                gap: 0.4rem;
+            }
+        }
+
+        /* Telas médias (768px - 991px) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .navbar-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 0.1rem 0.2rem;
+            }
+
+            .nav-link {
+                padding: 0.4rem 0.8rem !important;
+                font-size: 0.9rem;
+                white-space: nowrap;
+            }
+
+            /* Menu não logado em telas médias */
+            .navbar-nav:first-child {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .navbar-nav:last-child {
+                justify-content: center;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Telas grandes (992px - 1199px) */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .navbar-nav:first-child {
+                gap: 0.4rem;
+            }
+
+            .navbar-nav:last-child {
+                gap: 0.4rem;
+            }
+
+            .nav-link {
+                padding: 0.35rem 0.6rem !important;
+                font-size: 0.85rem;
+            }
+
+            /* Reduzir ainda mais o espaçamento */
+            .navbar-nav .nav-item {
+                margin: 0 0.05rem;
+            }
+        }
+
+        /* Telas muito grandes (1200px+) */
+        @media (min-width: 1200px) {
+            .navbar-nav:first-child {
+                gap: 0.6rem;
+            }
+
+            .navbar-nav:last-child {
+                gap: 0.6rem;
+            }
+
+            .nav-link {
+                padding: 0.45rem 0.8rem !important;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Telas ultra-wide (1400px+) */
+        @media (min-width: 1400px) {
+            .navbar-nav:first-child {
+                gap: 0.8rem;
+            }
+
+            .navbar-nav:last-child {
+                gap: 0.8rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem 1rem !important;
+                font-size: 1rem;
+            }
+        }
+
+        /* Ajustes específicos para dropdowns */
+        .dropdown-menu {
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            transform: translateX(3px);
+        }
+
+        .dropdown-item i {
+            width: 1.2rem;
+            text-align: center;
+        }
+
+        /* Melhorias específicas para mobile - MENU QUE EMPURRA CONTEÚDO */
+        @media (max-width: 991.98px) {
+
+            /* Menu mobile que empurra o conteúdo para baixo com estilo aprimorado */
+            .navbar-collapse {
+                background: linear-gradient(135deg, rgba(13, 110, 253, 0.95) 0%, rgba(11, 94, 215, 0.95) 100%) !important;
+                border-radius: 0 0 1rem 1rem !important;
+                margin-top: 0.5rem !important;
+                padding: 1.5rem !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                backdrop-filter: blur(10px) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+                transition: all 0.3s ease !important;
+            }
+
+            /* Animações suaves para abertura/fechamento */
+            .navbar-collapse:not(.show) {
+                max-height: 0 !important;
+                opacity: 0 !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                overflow: hidden !important;
+            }
+
+            .navbar-collapse.show {
+                max-height: 100vh !important;
+                opacity: 1 !important;
+            }
+
+            .navbar-collapse.collapsing {
+                transition: all 0.35s ease !important;
+                overflow: hidden !important;
+            }
+
+            /* Estilo dos itens de navegação em mobile */
+            .navbar-nav {
+                margin-bottom: 1rem;
+            }
+
+            .navbar-nav:last-child {
+                margin-bottom: 0;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .nav-item {
+                margin: 0.3rem 0;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-item:hover {
+                transform: translateX(3px);
+            }
+
+            .nav-link {
+                padding: 0.75rem 1rem !important;
+                margin: 0.1rem;
+                border-radius: 0.4rem;
+                background: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: rgba(255, 255, 255, 0.9) !important;
+                text-decoration: none;
+            }
+
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: white !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-link:focus {
+                background: rgba(255, 255, 255, 0.2);
+                color: white !important;
+                outline: 2px solid rgba(255, 255, 255, 0.5);
+                outline-offset: 2px;
+            }
+
+            .nav-link i {
+                width: 1.5rem;
+                text-align: center;
+                font-size: 1.1em;
+                opacity: 0.9;
+            }
+
+            /* Dropdown em mobile que empurra o conteúdo */
+            .dropdown-menu {
+                position: static !important;
+                float: none;
+                width: 100%;
+                margin-top: 0.5rem;
+                border: none;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+                background-color: rgba(255, 255, 255, 0.15) !important;
+                border-radius: 0.5rem;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                padding: 0.75rem;
+                transition: all 0.3s ease;
+            }
+
+            .dropdown-item {
+                color: rgba(255, 255, 255, 0.9) !important;
+                padding: 0.75rem 1rem;
+                border-radius: 0.4rem;
+                margin: 0.1rem 0;
+                background: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-decoration: none;
+            }
+
+            .dropdown-item:hover,
+            .dropdown-item:focus {
+                background-color: rgba(255, 255, 255, 0.25) !important;
+                color: white !important;
+                transform: translateX(3px);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .dropdown-item:focus {
+                outline: 2px solid rgba(255, 255, 255, 0.5);
+                outline-offset: 2px;
+            }
+
+            .dropdown-item i {
+                width: 1.2rem;
+                text-align: center;
+                opacity: 0.9;
+            }
+
+            .dropdown-divider {
+                border-color: rgba(255, 255, 255, 0.3);
+                margin: 0.75rem 0;
+            }
+
+            /* Garantir que o dropdown permaneça aberto quando clicado */
+            .dropdown.show .dropdown-menu {
+                display: block !important;
+                animation: fadeInUp 0.3s ease;
+            }
+
+            /* Animações personalizadas */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Melhorar usabilidade em mobile */
+            .navbar-toggler {
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .navbar-toggler:hover,
+            .navbar-toggler:focus {
+                border-color: rgba(255, 255, 255, 0.6);
+                background-color: rgba(255, 255, 255, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+        }
+
+        /* Ajustes para o menu quando não logado */
+        @media (max-width: 991.98px) {
+            .navbar-nav:last-child .nav-item {
+                margin: 0.1rem 0.2rem;
+            }
+
+            .navbar-nav:last-child .nav-link {
+                font-size: 0.85rem;
+                padding: 0.35rem 0.7rem !important;
+            }
+        }
+
+        /* Ajustes para o menu quando logado */
+        @media (max-width: 991.98px) {
+            .navbar-nav .nav-item.dropdown {
+                margin: 0.1rem 0.2rem;
+            }
+
+            .navbar-nav .nav-item.dropdown .nav-link {
+                font-size: 0.85rem;
+                padding: 0.35rem 0.7rem !important;
+            }
+        }
+
+        /* Garantir que o menu seja sempre visível em desktop */
+        @media (min-width: 992px) {
+            .navbar-toggler {
+                display: none !important;
+            }
+
+            .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+                flex-grow: 1;
+            }
+
+            .navbar-nav {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            /* Prevenir quebra de linha em desktop */
+            .navbar-nav .nav-item {
+                flex-shrink: 0;
+            }
+
+            .nav-link {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            /* Garantir que o nome do usuário seja visível */
+            .navbar-nav:last-child .nav-link {
+                max-width: 250px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            /* Ajustar tamanho dos ícones para economizar espaço */
+            .nav-link i {
+                font-size: 1em;
+                margin-right: 0.3rem;
+            }
+
+            /* Reduzir margens entre itens */
+            .navbar-nav .nav-item {
+                margin: 0 0.05rem;
+            }
+
+            /* Ajustar padding dos links para economizar espaço */
+            .nav-link {
+                padding: 0.35rem 0.6rem !important;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Ajustes específicos para telas médias onde o espaço é limitado */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .navbar-nav:first-child {
+                gap: 0.3rem;
+            }
+
+            .navbar-nav:last-child {
+                gap: 0.3rem;
+            }
+
+            .nav-link {
+                padding: 0.3rem 0.5rem !important;
+                font-size: 0.8rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1rem;
+            }
+
+            .navbar-brand img {
+                height: 30px;
+            }
+
+            /* Reduzir ainda mais o espaçamento */
+            .navbar-nav .nav-item {
+                margin: 0 0.02rem;
+            }
+        }
+
+        /* Ajustes para telas muito grandes onde há mais espaço */
+        @media (min-width: 1200px) {
+            .navbar-nav:first-child {
+                gap: 0.5rem;
+            }
+
+            .navbar-nav:last-child {
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                padding: 0.4rem 0.7rem !important;
+                font-size: 0.9rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+
+            .navbar-brand img {
+                height: 35px;
+            }
+        }
+
+        /* Ajustes para telas ultra-wide */
+        @media (min-width: 1400px) {
+            .navbar-nav:first-child {
+                gap: 0.7rem;
+            }
+
+            .navbar-nav:last-child {
+                gap: 0.7rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem 0.9rem !important;
+                font-size: 1rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1.2rem;
+            }
+
+            .navbar-brand img {
+                height: 40px;
+            }
+        }
+
+        /* Melhorias adicionais para responsividade */
+        .navbar {
+            min-height: 60px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Garantir que o container seja responsivo */
+        .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 576px) {
+            .container-fluid {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container-fluid {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container-fluid {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+        }
+
+        /* Melhorar espaçamento dos itens do menu */
+        .navbar-nav .nav-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-radius: 0.375rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link i {
+            font-size: 1.1em;
+        }
+
+        /* Ajustes específicos para dropdowns responsivos */
+        .dropdown-toggle::after {
+            margin-left: 0.5rem;
+        }
+
+        /* Ajustes para telas médias onde o menu pode quebrar */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .navbar-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 0.1rem 0.2rem;
+            }
+        }
+
+        /* Ajustes para telas pequenas onde o menu é vertical */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: rgba(0, 0, 0, 0.1);
+                border-radius: 0.5rem;
+                margin-top: 0.5rem;
+                padding: 1rem;
+            }
+
+            .navbar-nav {
+                gap: 0.5rem;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-link {
+                justify-content: center;
+                padding: 0.75rem 1rem !important;
+            }
+        }
+
+        /* Notification styles */
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 0.7rem;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .notification-dropdown {
+            min-width: 300px;
+            max-width: 350px;
+            padding: 0;
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e9ecef;
+            background-color: #f8f9fa;
+        }
+
+        .notification-body {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .notification-item {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e9ecef;
+            transition: background-color 0.2s;
+        }
+
+        .notification-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .notification-item.unread {
+            background-color: #e9f5ff;
+        }
+
+        .notification-item.unread:hover {
+            background-color: #d4edff;
+        }
+
+        .notification-footer {
+            text-align: center;
+            padding: 0.75rem 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Feature Usage Counter styles */
+        .feature-usage-counter {
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #f8f9fa;
+            transition: background-color 0.2s;
+        }
+
+        .feature-usage-counter:hover {
+            background-color: #e9ecef;
+        }
+
+        .feature-usage-counter .feature-name {
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-usage-counter .usage-info {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+
+        .feature-usage-counter .upgrade-prompt {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: #fff3cd;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            color: #856404;
+        }
+
+        .feature-usage-counter .upgrade-prompt a {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .feature-usage-counter .upgrade-prompt a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="css/katex.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="/">
+                <img src="images/logo-icon.svg" alt="TCC Collab Logo">
+                <span>TCC Collab</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    
+                </ul>
+                <ul class="navbar-nav">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/curso-tcc"><i class="fas fa-graduation-cap me-2"></i>Curso TCC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/apa-guidelines"><i class="fas fa-book-open me-2"></i>Normas APA 7ª Ed.</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt me-2"></i>Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light btn-sm ms-2" href="/register"><i class="fas fa-user-plus me-2"></i>Criar Conta</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Experience Notification -->
+    <div id="mobile-experience-alert" class="alert alert-warning alert-dismissible fade" role="alert" style="display:none; border-radius: 0; border-top: none; margin-bottom: 0;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fas fa-info-circle me-2"></i>
+                Para melhor experiência no uso da plataforma, utilize um computador.
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    </div>
+
+    <!-- Trial notification banner -->
+    
+
+    <main>
+        
+        
+        
+
+        
+<!-- Hero Section - Promessa ROMA Melhorada -->
+<div class="hero-section py-5 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #0b1020 0%, #1a237e 100%);">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: url('/static/images/pattern.png') repeat; opacity: 0.05;"></div>
+    <div class="container position-relative py-lg-5" style="z-index: 10;">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <div class="badge bg-danger text-white mb-3 px-3 py-2 rounded-pill fs-6 animate__animated animate__fadeInDown">
+                        <i class="fas fa-shield-virus me-2"></i>Chega de Citações Inventadas pelo ChatGPT
+                    </div>
+                    <h1 class="display-4 fw-bold mb-3 animate-title">Entregue seu TCC <span class="text-warning">Pronto e Aprovado</span> sem Risco de Plágio</h1>
+                    
+                    <p class="lead mb-4 fs-5 text-white-50">O ChatGPT alucina e inventa autores que não existem. No TCC Collab, cada parágrafo é baseado em <strong>fontes reais</strong> com tecnologia R.A.G., formatado em <strong>APA 7ª edição</strong> para aprovação imediata.</p>
+
+                    <!-- Trust Badges Premium -->
+                    <div class="trust-badges d-flex flex-wrap gap-2 mb-4">
+                        <div class="badge bg-white bg-opacity-10 py-2 px-3 border border-white border-opacity-25 rounded-pill">
+                            <i class="fas fa-check-circle text-success me-1"></i> Citações 100% Reais
+                        </div>
+                        <div class="badge bg-white bg-opacity-10 py-2 px-3 border border-white border-opacity-25 rounded-pill">
+                            <i class="fas fa-file-invoice text-info me-1"></i> APA 7ª Automática
+                        </div>
+                        <div class="badge bg-white bg-opacity-10 py-2 px-3 border border-white border-opacity-25 rounded-pill">
+                            <i class="fas fa-user-lock text-warning me-1"></i> Anti-Plágio
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="d-flex flex-column flex-md-row gap-3 mb-4">
+                        <a class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark shadow-lg pulse-cta" href="#planos-disponiveis" role="button">
+                            <i class="fas fa-rocket me-2"></i>Começar Meu TCC Agora
+                        </a>
+                        <a class="btn btn-outline-light btn-lg px-4 py-3" href="#comparacao" role="button">
+                            <i class="fas fa-balance-scale me-2"></i>IA vs ChatGPT
+                        </a>
+                    </div>
+
+                    <!-- Prova Social Imediata -->
+                    <div class="d-flex align-items-center gap-3 mt-4 mt-lg-5">
+                        <div class="avatar-group d-flex">
+                            <img src="https://ui-avatars.com/api/?name=M+J&background=random" class="rounded-circle border border-2 border-primary" width="40">
+                            <img src="https://ui-avatars.com/api/?name=C+M&background=random" class="rounded-circle border border-2 border-primary ms-n2" width="40">
+                            <img src="https://ui-avatars.com/api/?name=A+S&background=random" class="rounded-circle border border-2 border-primary ms-n2" width="40">
+                        </div>
+                        <div class="small">
+                            <span class="text-warning fw-bold">Mais de 500 estudantes</span> já defenderam com sucesso.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-image-wrapper position-relative p-4">
+                    <img src="images/hero-image.svg" alt="TCC Collab Interface" class="img-fluid rounded-4 shadow-2xl floating-img">
+                    <!-- Overlay badges -->
+                    <div class="position-absolute top-0 start-100 translate-middle badge-float bg-success p-3 rounded-4 shadow-lg">
+                        <i class="fas fa-award fs-3 mb-1"></i>
+                        <div class="small fw-bold">Fidelidade<br>Absoluta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secção: Os 3 Pilares da sua Aprovação -->
+<div class="py-5 bg-white border-bottom">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <span class="text-primary fw-bold text-uppercase tracking-wider">A Fórmula do Sucesso</span>
+                <h2 class="display-5 fw-bold mt-2">Por que o TCC Collab é Infalível?</h2>
+            </div>
+        </div>
+        <div class="row g-4">
+            <!-- Velocidade -->
+            <div class="col-md-4">
+                <div class="pillar-card p-4 rounded-4 text-center h-100 transition-all hover-translate-up">
+                    <div class="p-3 bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex mb-4">
+                        <i class="fas fa-bolt fs-2"></i>
+                    </div>
+                    <h3 class="h4 fw-bold">Velocidade Extrema</h3>
+                    <p class="text-muted">Transforme meses de bloqueio em dias de progresso constante. Nosso sistema guia você passo a passo, do tema à conclusão, eliminando a paralisia do "papel em branco".</p>
+                </div>
+            </div>
+            <!-- Qualidade -->
+            <div class="col-md-4">
+                <div class="pillar-card p-4 rounded-4 text-center h-100 transition-all hover-translate-up">
+                    <div class="p-3 bg-success bg-opacity-10 text-success rounded-circle d-inline-flex mb-4">
+                        <i class="fas fa-graduation-cap fs-2"></i>
+                    </div>
+                    <h3 class="h4 fw-bold">Qualidade Académica</h3>
+                    <p class="text-muted">Nada de textos genéricos. O TCC Collab utiliza apenas <strong>citações verificáveis</strong> e segue as normas <strong>APA 7ª</strong> com rigor militar. O seu supervisor vai sorrir ao ler.</p>
+                </div>
+            </div>
+            <!-- Segurança -->
+            <div class="col-md-4">
+                <div class="pillar-card p-4 rounded-4 text-center h-100 transition-all hover-translate-up">
+                    <div class="p-3 bg-warning bg-opacity-10 text-warning rounded-circle d-inline-flex mb-4">
+                        <i class="fas fa-shield-alt fs-2"></i>
+                    </div>
+                    <h3 class="h4 fw-bold">Segurança Total</h3>
+                    <p class="text-muted">Blindado contra plágio e alucinações. Nossa tecnologia <strong>R.A.G.</strong> garante que a IA não invente nada, mantendo 100% de fidelidade aos seus dados e artigos carregados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secção: Superpoderes do TCC Collab -->
+<div id="recursos" class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold">Tudo o que Você Precisa para <span class="text-primary">Vencer a Monografia</span></h2>
+                <p class="lead text-muted">Ferramentas avançadas que fazem o trabalho pesado por você, mantendo o rigor académico.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Card 1: Importação -->
+            <div class="col-lg-6">
+                <div class="feature-card-premium p-4 rounded-4 bg-white shadow-sm h-100 border">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-square bg-info-soft text-info rounded-3 p-3 me-3">
+                            <i class="fas fa-file-import fs-4"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-0">Importação Inteligente</h3>
+                    </div>
+                    <div class="text-center p-4 bg-light rounded-3 mb-4">
+                        <i class="fas fa-file-upload text-primary mb-3" style="font-size: 5rem;"></i>
+                        <h5 class="fw-bold mb-0">Upload e Organização</h5>
+                        <p class="small text-muted">PDF, Word e Rascunhos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Análise de Dados -->
+            <div class="col-lg-6">
+                <div class="feature-card-premium p-4 rounded-4 bg-white shadow-sm h-100 border">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-square bg-warning-soft text-warning rounded-3 p-3 me-3">
+                            <i class="fas fa-chart-bar fs-4"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-0">Análise de Dados em Segundos</h3>
+                    </div>
+                    <div class="text-center p-4 bg-light rounded-3 mb-4">
+                        <i class="fas fa-chart-line text-warning mb-3" style="font-size: 5rem;"></i>
+                        <h5 class="fw-bold mb-0">Processamento Estatístico</h5>
+                        <p class="small text-muted">Excel, CSV e Tabelas APA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Instrumentos -->
+            <div class="col-lg-6">
+                <div class="feature-card-premium p-4 rounded-4 bg-white shadow-sm h-100 border">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-square bg-success-soft text-success rounded-3 p-3 me-3">
+                            <i class="fas fa-clipboard-list fs-4"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-0">Gerador de Instrumentos</h3>
+                    </div>
+                    <p class="text-muted">A IA lê o seu Capítulo III e gera automaticamente Questionários Likert ou Guiões de Entrevista baseados exatamente no seu Referencial Teórico.</p>
+                    <ul class="list-unstyled small mb-0">
+                        <li><i class="fas fa-check text-success me-2"></i>Escalas validadas</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Perguntas de pesquisa precisas</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Exportação imediata</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4: Controle de Estrutura -->
+            <div class="col-lg-6">
+                <div class="feature-card-premium p-4 rounded-4 bg-white shadow-sm h-100 border">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-square bg-primary-soft text-primary rounded-3 p-3 me-3">
+                            <i class="fas fa-sitemap fs-4"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-0">Controle Estrutural Absoluto</h3>
+                    </div>
+                    <p class="text-muted">Chega de textos repetitivos. Você define os tópicos que deseja analisar em cada capítulo e a IA escreve seguindo o seu roteiro ponto a ponto.</p>
+                    <ul class="list-unstyled small mb-0">
+                        <li><i class="fas fa-check text-success me-2"></i>Subtítulos automáticos</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Escrita fluida e organizada</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Personalização total do roteiro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Nova Seção: Análise de Dados com IA -->
+<div class="data-analysis-section py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fs-6">
+                    <i class="fas fa-magic me-2"></i>Novidade Exclusiva
+                </div>
+                <!-- Título Poderoso -->
+                <h2 class="display-5 fw-bold mb-4 text-white">O Capítulo IV pronto em <span class="text-warning">segundos</span>,
+                    não em semanas.</h2>
+
+                <p class="lead text-white mb-4">A maior dor do estudante é analisar os dados. "Não sei mexer no
+                    Excel", "Não sei SPSS". Nós resolvemos isso.</p>
+
+                <div class="d-flex flex-column gap-4">
+                    <!-- Feature 1 -->
+                    <div class="d-flex">
+                        <div class="icon-box bg-warning text-dark rounded-circle p-3 me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="fas fa-file-excel fs-3"></i>
+                        </div>
+                        <div>
+                            <h4 class="h5 fw-bold text-warning">Você sobe a Planilha</h4>
+                            <p class="text-white mb-0">Carregue seus dados do Excel, CSV ou transcrições de
+                                entrevista em Word.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="d-flex">
+                        <div class="icon-box bg-info text-white rounded-circle p-3 me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="fas fa-robot fs-3"></i>
+                        </div>
+                        <div>
+                            <h4 class="h5 fw-bold text-info">A IA Trabalha por Você</h4>
+                            <p class="text-white mb-0">Nossa Inteligência Artificial analisa estatísticas, cruza
+                                variáveis e identifica padrões qualitativos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="d-flex">
+                        <div class="icon-box bg-success text-white rounded-circle p-3 me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="fas fa-file-alt fs-3"></i>
+                        </div>
+                        <div>
+                            <h4 class="h5 fw-bold text-success">Texto e Tabelas Prontos</h4>
+                            <p class="text-white mb-0">Receba a análise descritiva escrita em linguagem académica,
+                                com tabelas APA já formatadas e prontas para copiar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <a href="#planos-disponiveis" class="btn btn-warning btn-lg px-5 py-3 fw-bold shadow-lg text-dark">
+                        <i class="fas fa-chart-pie me-2"></i>Quero Analisar Meus Dados Agora
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Visualização Abstrata do Processo -->
+                <div class="position-relative p-4 bg-white bg-opacity-10 rounded-4 border border-white border-opacity-10 shadow-lg">
+                    <!-- Card Flutuante 1: Input -->
+                    <div class="card border-0 shadow-sm mb-3 animate-float-slow">
+                        <div class="card-body p-3 d-flex align-items-center">
+                            <i class="fas fa-file-csv text-success fs-1 me-3"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">dados_pesquisa.xlsx</h6>
+                                <small class="text-muted">Carregando arquivo...</small>
+                            </div>
+                            <i class="fas fa-check-circle text-success ms-auto"></i>
+                        </div>
+                    </div>
+
+                    <!-- Seta -->
+                    <div class="text-center text-white-50 mb-3">
+                        <i class="fas fa-arrow-down fs-4"></i>
+                    </div>
+
+                    <!-- Card Flutuante 2: Processamento -->
+                    <div class="card border-0 shadow-sm mb-3 bg-primary text-white animate-pulse">
+                        <div class="card-body p-3 text-center">
+                            <i class="fas fa-cog fa-spin mb-2 fs-4"></i>
+                            <h6 class="mb-0">Gerando Tabelas e Estatísticas...</h6>
+                        </div>
+                    </div>
+
+                    <!-- Seta -->
+                    <div class="text-center text-white-50 mb-3">
+                        <i class="fas fa-arrow-down fs-4"></i>
+                    </div>
+
+                    <!-- Card Flutuante 3: Resultado -->
+                    <div class="card border-0 shadow-lg animate-float-reverse">
+                        <div class="card-header bg-white border-bottom-0 pb-0">
+                            <span class="badge bg-success opacity-75">Capítulo IV Gerado</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="small text-muted mb-2"><strong>4.1 Caracterização da Amostra</strong></p>
+                            <p class="small text-muted mb-2">Conforme observado na Tabela 1, a maioria dos participantes
+                                (65%) reside em Maputo...</p>
+                            <div class="table-responsive bg-light p-2 rounded">
+                                <table class="table table-bordered table-sm mb-0 bg-white" style="font-size: 0.7rem;">
+                                    <thead>
+                                        <tr class="bg-light">
+                                            <th>Cidade</th>
+                                            <th>Freq</th>
+                                            <th>%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Maputo</td>
+                                            <td>65</td>
+                                            <td>65%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Matola</td>
+                                            <td>35</td>
+                                            <td>35%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Depoimentos -->
+<div class="testimonials-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold display-5">Estudantes Que Já Defenderam Com Sucesso</h2>
+                <p class="lead text-muted fs-4">Histórias reais de quem concluiu a Monografia com o TCC Collab</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="testimonial-card p-4 bg-white rounded-3 shadow-lg h-100 border-top border-success border-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="testimonial-avatar bg-success-soft rounded-circle me-3">
+                            <i class="fas fa-user text-success"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Maria João</h5>
+                            <small class="text-muted">Universidade Eduardo Mondlane</small>
+                        </div>
+                    </div>
+                    <p class="mb-0 fs-6">"Meu Supervisor verificou todas as citações e aprovou de primeira! Diferente do
+                        ChatGPT, aqui cada referência é real e comprovável."</p>
+                    <div class="mt-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card p-4 bg-white rounded-3 shadow-lg h-100 border-top border-primary border-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="testimonial-avatar bg-primary-soft rounded-circle me-3">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Carlos Manuel</h5>
+                            <small class="text-muted">Universidade Pedagógica</small>
+                        </div>
+                    </div>
+                    <p class="mb-0 fs-6">"Não sabia por onde começar! O sistema mostrou a ordem certa. Minha Introdução
+                        ficou coerente com a Metodologia sem eu ter que reescrever tudo."</p>
+                    <div class="mt-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card p-4 bg-white rounded-3 shadow-lg h-100 border-top border-warning border-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="testimonial-avatar bg-warning-soft rounded-circle me-3">
+                            <i class="fas fa-user text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Ana Sofia</h5>
+                            <small class="text-muted">Universidade Lúrio</small>
+                        </div>
+                    </div>
+                    <p class="mb-0 fs-6">"O suporte é excepcional! A metodologia 3 Ciclos realmente funciona. Já
+                        recomendei a vários colegas!"</p>
+                    <div class="mt-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Depoimentos com Imagens -->
+<div class="testimonials-images-section py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold">Mais Histórias de Sucesso</h2>
+                <p class="lead text-muted">Estudantes reais que concluíram a Monografia com o TCC Collab</p>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="video-container rounded-4 shadow-lg overflow-hidden position-relative" id="video-container-2">
+                    <!-- Custom Thumbnail Overlay -->
+                    <div class="video-overlay" id="video-overlay-2" onclick="playVideo('U3hQXbn7Cgc', 'video-container-2')" style="background: url('images/video_cover.png') center/cover no-repeat; cursor: pointer; position: absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
+                        <div class="play-button-wrapper">
+                            <div class="play-button bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-lg" style="width: 80px; height: 80px; transition: transform 0.3s ease;">
+                                <i class="fas fa-play text-white fs-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ratio ratio-16x9">
+                        <div id="video-placeholder-2"></div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <span class="badge bg-primary text-white px-3 py-2 rounded-pill shadow-sm">
+                        <i class="fas fa-play-circle me-2"></i>Assista aos depoimentos dos nossos estudantes
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Swiper Carousel Repositioned -->
+        <div class="testimonials-carousel-wrapper position-relative mt-5">
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial1.jpg" alt="Depoimento 1" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial2.jpg" alt="Depoimento 2" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial3.jpg" alt="Depoimento 3" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial4.jpg" alt="Depoimento 4" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial5.jpg" alt="Depoimento 5" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial6.jpg" alt="Depoimento 6" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 7 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial7.jpeg" alt="Depoimento 7" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 8 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial8.jpeg" alt="Depoimento 8" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 9 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/testimonial9.jpeg" alt="Depoimento 9" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next testimonial-nav-btn"></div>
+                <div class="swiper-button-prev testimonial-nav-btn"></div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-5">
+            <a href="#planos-disponiveis" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg">
+                <i class="fas fa-rocket me-2"></i>Quero Ter Meu Sucesso Também
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Sistema R.A.G. - Tecnologia de Segurança -->
+<header class="hero-section text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #0b1020 0%, #1a237e 100%);">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: url('/static/images/pattern.png') repeat; opacity: 0.05;"></div>
+    <div class="container position-relative py-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <span class="badge bg-info px-3 py-2 rounded-pill mb-3 text-dark fw-bold">
+                    <i class="fas fa-microchip me-2"></i>Tecnologia Exclusiva TCC Collab
+                </span>
+                <h2 class="fw-bold display-5 mb-3">Inteligência Artificial "Anti-Alucinação"</h2>
+                <p class="lead text-white-50 fs-4">Utilizamos tecnologia <strong>R.A.G.</strong> (Geração Aumentada por
+                    Recuperação) para garantir que cada palavra seja baseada em fatos, não em invenção.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center g-5">
+            <!-- Coluna Visual / Processo -->
+            <div class="col-lg-5">
+                <div class="rag-process-card p-4 rounded-4 shadow-lg border border-opacity-25 border-white bg-white bg-opacity-10">
+                    <div class="d-flex flex-column gap-4">
+                        <!-- Step 1 -->
+                        <div class="d-flex align-items-center">
+                            <div class="rag-icon bg-warning text-dark me-3 rounded-circle shadow">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1 text-white">1. Seus Arquivos</h5>
+                                <small class="text-white-50">O sistema lê seus PDFs e Dados reais.</small>
+                            </div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="text-center text-info">
+                            <i class="fas fa-arrow-down fa-lg"></i>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="d-flex align-items-center">
+                            <div class="rag-icon bg-info text-dark me-3 rounded-circle shadow">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1 text-white">2. Processamento R.A.G.</h5>
+                                <small class="text-warning">A IA consulta <span class="text-warning">apenas</span> suas
+                                    fontes antes de escrever.</small>
+                            </div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="text-center text-success">
+                            <i class="fas fa-arrow-down fa-lg"></i>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="d-flex align-items-center">
+                            <div class="rag-icon bg-success text-white me-3 rounded-circle shadow">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1 text-white">3. Texto Blindado</h5>
+                                <small class="text-white-50">Conteúdo sem invenções, com citações reais.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Benefícios / Copy -->
+            <div class="col-lg-7">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="apa-feature-card bg-white bg-opacity-10 p-4 rounded-3 h-100 border-start border-4 border-info">
+                            <div class="mb-3">
+                                <i class="fas fa-search-dollar fs-2 text-info"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-2">IA Baseada em Evidências</h3>
+                            <p class="text-white-50 mb-0">Diferente do ChatGPT que "cria" respostas, nosso sistema age
+                                como um pesquisador sério: primeiro lê as fontes, depois escreve.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="apa-feature-card bg-white bg-opacity-10 p-4 rounded-3 h-100 border-start border-4 border-success">
+                            <div class="mb-3">
+                                <i class="fas fa-history fs-2 text-success"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-2">Memória Contextual</h3>
+                            <p class="text-white-50 mb-0">A IA "lembra" do seu Capítulo 1 enquanto escreve o Capítulo 5,
+                                garantindo que o TCC não tenha contradições lógicas.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="apa-feature-card bg-white bg-opacity-10 p-4 rounded-3 h-100 border-start border-4 border-warning">
+                            <div class="mb-3">
+                                <i class="fas fa-check-double fs-2 text-warning"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-2">Citações 100% Reais</h3>
+                            <p class="text-white-50 mb-0">O pesadelo de "citações inventadas" acabou. Se está no texto,
+                                existe na bibliografia e no livro original.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="apa-feature-card bg-white bg-opacity-10 p-4 rounded-3 h-100 border-start border-4 border-danger">
+                            <div class="mb-3">
+                                <i class="fas fa-user-shield fs-2 text-danger"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-2">Anti-Plágio Estrutural</h3>
+                            <p class="text-white-50 mb-0">Como o texto é gerado a partir da <em>sua</em> interpretação e
+                                dos seus dados, o resultado é único e passa nos verificadores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Comparação: ChatGPT vs TCC Collab -->
+    <div id="comparacao" class="plan-comparison py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <span class="badge bg-danger px-3 py-2 rounded-pill mb-3">A verdade que ninguém conta</span>
+                    <h2 class="fw-bold display-5 text-dark">ChatGPT Gratuito vs TCC Collab</h2>
+                    <p class="lead text-muted fs-4">Descubra por que seus colegas estão a refazer o TCC</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover shadow-sm">
+                            <thead class="bg-dark text-white">
+                                <tr>
+                                    <th class="py-3">Recurso</th>
+                                    <th class="text-center py-3 bg-secondary"><i class="fas fa-robot me-2"></i>ChatGPT
+                                        Gratuito</th>
+                                    <th class="text-center py-3 bg-success"><i class="fas fa-check-circle me-2"></i>TCC
+                                        Collab</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-quote-left text-primary me-2"></i>Citações com
+                                        autores reais</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Inventa
+                                            autores</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">100%
+                                            verificáveis</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-brain text-primary me-2"></i>Introdução bate
+                                        com a
+                                        Metodologia</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Cada
+                                            resposta é isolada</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Tudo
+                                            coerente do início ao fim</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-list-ol text-primary me-2"></i>Estrutura APA
+                                        pronta
+                                    </td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Precisa
+                                            formatar manual</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Automático APA 7ª</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-file-export text-primary me-2"></i>Exportação
+                                        formatada</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Copiar/Colar manual</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">PDF e
+                                            Word prontos</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-book text-primary me-2"></i>Referências
+                                        bibliográficas</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Lista
+                                            com erros</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Geradas automaticamente</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-user-graduate text-primary me-2"></i>Supervisor
+                                        pode verificar</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Vai
+                                            reprovar</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Fontes comprováveis</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-chart-bar text-primary me-2"></i>Análise de
+                                        Dados
+                                        Estatísticos</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Se
+                                            perde
+                                            com planilhas</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Lê
+                                            Excel e gera Tabelas</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold"><i class="fas fa-route text-primary me-2"></i>Sabe por onde
+                                        começar
+                                    </td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Você
+                                            decide sozinho</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Ordem
+                                            guiada passo a passo</small></td>
+                                </tr>
+                                <!-- [NOVO] Linha: Instrumentos de Coleta -->
+                                <tr style="background: linear-gradient(90deg, #fff8f0, #fff);">
+                                    <td class="fw-bold"><i class="fas fa-clipboard-list me-2" style="color:#fd7e14"></i>Questionários e Guiões de Entrevista</td>
+                                    <td class="text-center bg-danger-subtle"><i class="fas fa-times text-danger fs-4"></i><br><small class="text-muted">Gera
+                                            perguntas genéricas sem contexto académico</small></td>
+                                    <td class="text-center bg-success-subtle"><i class="fas fa-check text-success fs-4"></i><br><small class="text-success">Escala Likert metodologicamente correta, baseada no seu
+                                            Referencial Teórico</small></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Alerta de Urgência -->
+                    <div class="alert alert-warning text-center mt-4 shadow-sm">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Atenção:</strong> Muitos estudantes só descobrem que as citações são falsas quando o
+                        Supervisor reprova o trabalho.
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action - Adquirir Acesso -->
+    <div class="cta-premium py-5 text-white" style="background: linear-gradient(135deg, #0b1020 0%, #1a237e 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <div class="premium-badge me-3">
+                            <i class="fas fa-shield-alt text-warning"></i>
+                        </div>
+                        <h2 class="fw-bold text-white mb-0">Comece Agora</h2>
+                    </div>
+                    <p class="lead text-white-soft mb-4">Monografia pronta com citações que o Supervisor pode
+                        verificar</p>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-lg-8">
+                            <ul class="premium-features d-flex flex-wrap justify-content-center">
+                                <div class="row text-start g-3">
+                                    <div class="col-md-6">
+                                        <li><i class="fas fa-check-circle me-2"></i> Citações reais e verificáveis</li>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <li><i class="fas fa-check-circle me-2"></i> Formatação APA 7ª Edição automática
+                                        </li>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <li><i class="fas fa-check-circle me-2"></i> Ordem certa: sabe por onde começar
+                                        </li>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <li><i class="fas fa-check-circle me-2"></i> Introdução coerente com Metodologia
+                                        </li>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="premium-card bg-white text-dark p-4 rounded-4 shadow-lg" id="planos-disponiveis">
+                        
+                        <div class="text-center mb-3">
+                            <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">Planos Disponíveis</span>
+                            <h3 class="fw-bold mb-0">Escolha seu Plano</h3>
+                        </div>
+                        
+
+                        <div class="plans-container mt-4">
+
+                            
+                            
+                            <div class="row g-3 justify-content-center">
+                                <!-- Plano Mensal -->
+                                
+                                <div class="col-12 col-md-6 col-lg-3 d-flex">
+                                    <div class="plan-item h-100 p-4 border rounded-4 position-relative hover-translate-up bg-white">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h4 class="h5 fw-bold mb-0">Standard</h4>
+                                            <span class="badge bg-light text-dark px-3 py-2 rounded-pill small">30 dias</span>
+                                        </div>
+                                        <div class="pricing-value mb-3">
+                                            
+                                            <span class="currency fs-6">MZN</span>
+                                            <span class="amount fw-bold display-6">697,00</span>
+                                            
+                                        </div>
+                                        <ul class="list-unstyled mb-4 small">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>1 Trabalho</strong></li>
+                                            <li class="mb-2 text-muted opacity-50"><i class="fas fa-times text-danger me-2"></i>Carregar Trabalho Existente</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar 5 Artigos por trabalho</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Citações reais e verificáveis</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Formatação APA 7ª Edição</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Estrutura guiada</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Exportar em PDF e Word</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><span class="badge bg-warning text-dark me-1" style="font-size: 0.70rem;">BETA</span> IA de Análise de Dados</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Controle Estrutural por Tópicos</li>
+                                            <li class="mb-2 text-muted opacity-50"><i class="fas fa-times text-danger me-2"></i>Gerador de Instrumentos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte via WhatsApp</li>
+                                            <li class="mb-2 text-muted opacity-50"><i class="fas fa-times text-danger me-2"></i>Suporte via Google/Zoom Meeting</li>
+                                            <li class="mb-2 text-muted opacity-50"><i class="fas fa-times text-danger me-2"></i>Análise pelo Supervisor Paralelo</li>
+                                        </ul>
+                                        <a href="/register" class="btn btn-outline-primary w-100 py-3 fw-bold rounded-pill">Assinar Agora</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Plano Trimestral -->
+                                
+                                <div class="col-12 col-md-6 col-lg-3 d-flex">
+                                    <div class="plan-item h-100 p-4 border border-warning border-3 rounded-4 bg-favorite-dark shadow-lg position-relative hover-translate-up">
+                                        <div class="position-absolute top-0 start-50 translate-middle">
+                                            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill fw-bold">O FAVORITO EXCLUSIVO</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-3 mt-2">
+                                            <h4 class="h5 fw-bold mb-0 text-warning">Pro</h4>
+                                            <span class="badge bg-warning-soft text-warning px-3 py-2 rounded-pill small">90 dias</span>
+                                        </div>
+                                        <div class="pricing-value mb-3">
+                                            
+                                            <span class="currency fs-6">MZN</span>
+                                            <span class="amount fw-bold display-5 text-warning">1.497,00</span>
+                                            
+                                        </div>
+                                        <ul class="list-unstyled mb-4 small">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>3 Trabalhos</strong></li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar Trabalho Existente</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar 15 Artigos por trabalho</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Citações reais e verificáveis</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Formatação APA 7ª Edição</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Estrutura guiada</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Exportar em PDF e Word</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><span class="badge bg-warning text-dark me-1" style="font-size: 0.70rem;">BETA</span> IA de Análise de Dados</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Controle Estrutural por Tópicos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gerador de Instrumentos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte via WhatsApp</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte via Google/Zoom Meeting</li>
+                                            <li class="mb-2 text-white-50 opacity-50"><i class="fas fa-times text-danger me-2"></i>Análise pelo Supervisor Paralelo</li>
+                                        </ul>
+                                        <a href="/register" class="btn btn-warning w-100 py-3 fw-bold rounded-pill text-dark pulse-cta">Assinar Agora</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Plano Anual -->
+                                
+                                <div class="col-12 col-md-6 col-lg-3 d-flex">
+                                    <div class="plan-item h-100 p-4 border rounded-4 position-relative hover-translate-up bg-white">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h4 class="h5 fw-bold mb-0 text-success">Premium</h4>
+                                            <span class="badge bg-success-soft text-success px-3 py-2 rounded-pill small">365 dias</span>
+                                        </div>
+                                        <div class="pricing-value mb-3">
+                                            
+                                            <span class="currency fs-6">MZN</span>
+                                            <span class="amount fw-bold display-5">3.947,00</span>
+                                            
+                                        </div>
+                                        <ul class="list-unstyled mb-4 small">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>5 Trabalhos</strong></li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar Trabalho Existente</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar 40 Artigos por trabalho</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Citações reais e verificáveis</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Formatação APA 7ª Edição</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Estrutura guiada</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Exportar em PDF e Word</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><span class="badge bg-warning text-dark me-1" style="font-size: 0.70rem;">BETA</span> IA de Análise de Dados</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Controle Estrutural por Tópicos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gerador de Instrumentos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte via WhatsApp</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte via Google/Zoom Meeting</li>
+                                            <li class="mb-2 text-success fw-bold"><i class="fas fa-check me-2"></i>1 Análise de Supervisor Paralelo</li>
+                                        </ul>
+                                        <div class="mb-3 text-center">
+                                            <small class="text-success fw-bold"><i class="fas fa-piggy-bank me-1"></i>A maior economia anual</small>
+                                        </div>
+                                        <a href="/register" class="btn btn-success w-100 py-3 fw-bold rounded-pill">Assinar Agora</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Plano Anual Plus -->
+                                
+                                <div class="col-12 col-md-6 col-lg-3 d-flex">
+                                    <div class="plan-item h-100 p-4 border border-primary border-3 rounded-4 bg-white shadow-lg position-relative hover-translate-up">
+                                        <div class="position-absolute top-0 start-50 translate-middle">
+                                            <span class="badge bg-primary text-white px-4 py-2 rounded-pill fw-bold border border-white">ILIMITADO</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-3 mt-2">
+                                            <h4 class="h5 fw-bold mb-0 text-primary">Elite</h4>
+                                            <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill small">365 dias</span>
+                                        </div>
+                                        <div class="pricing-value mb-3">
+                                            
+                                            <span class="currency fs-6">MZN</span>
+                                            <span class="amount fw-bold display-5 text-primary">5.997,00</span>
+                                            
+                                        </div>
+                                        <ul class="list-unstyled mb-4 small">
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Trabalhos Ilimitados</strong></li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar Trabalho Existente</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Carregar 100 Artigos por trabalho</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Citações reais e verificáveis</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Formatação APA 7ª Edição</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Estrutura guiada</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Exportar em PDF e Word</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><span class="badge bg-warning text-dark me-1" style="font-size: 0.70rem;">BETA</span> IA de Análise de Dados</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Controle Estrutural por Tópicos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gerador de Instrumentos</li>
+                                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte via WhatsApp</li>
+                                            <li class="mb-2"><i class="fa-solid fa-video text-success me-2"></i>Zoom/Meet + 2 Análises de Supervisor</li>
+                                            <li class="mb-2 text-primary fw-bold"><i class="fas fa-star me-2"></i>Prioridade no Suporte</li>
+                                        </ul>
+                                        <a href="/register" class="btn btn-primary w-100 py-3 fw-bold rounded-pill text-white">Assinar Elite</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="text-center mt-4">
+                            <div class="p-3 bg-light rounded-3 mb-3 border">
+                                <h5 class="mb-0 text-mpesa"><i class="fas fa-bolt me-2"></i>Pagamento Automático por Mpesa</h5>
+                            </div>
+                            <a href="/register" class="btn btn-success btn-lg fw-bold mb-3 px-5 py-3 shadow-lg">
+                                <i class="fas fa-rocket me-2"></i>COMEÇAR COM CITAÇÕES REAIS
+                            </a>
+                            <p class="small text-muted mb-0">Crie sua conta e receba a notificação no celular para ativar agora.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Quem sou Eu Section -->
+    <div class="about-me-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-4 text-dark">Quem sou Eu?</h2>
+
+                    <!-- Profile Image -->
+                    <div class="profile-image-container mb-4">
+                        <div class="profile-image-wrapper">
+                            <img src="images/profile.jpg" alt="Fanuel Chacha" class="profile-image">
+                        </div>
+                    </div>
+
+                    <!-- Bio Content -->
+                    <div class="bio-content bg-white p-4 rounded-3 shadow-sm text-dark">
+                        <p class="lead mb-0">
+                            Sou <b>Fanuel Chacha</b>, Psicólogo Educacional e Empreendedor Digital com mais de 16 anos
+                            de
+                            experiência como Docente em Moçambique. Sou mentor em Análise de Dados usando SPSS e ao
+                            longo
+                            dos últimos anos desenvolvi estratégias para acelerar Projectos de Pesquisa e Trabalhos de
+                            Conclusão de Curso através da Metodologia de 3 Ciclos. Ajudo milhares de estudantes no meu
+                            Facebook e Canal de Youtube.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+        .profile-image-wrapper {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(45deg, #007bff, #00ff88, #007bff);
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-content {
+            position: relative;
+            margin-top: 3rem;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+        }
+
+        .bio-content::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-left: 1px solid rgba(0, 123, 255, 0.1);
+            border-top: 1px solid rgba(0, 123, 255, 0.1);
+            transform: rotate(45deg);
+        }
+
+        /* Base Styles */
+        :root {
+            --primary-color: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --primary-light: #cfe2ff;
+            --primary-soft: rgba(13, 110, 253, 0.1);
+            --success-color: #198754;
+            --success-dark: #157347;
+            --success-soft: rgba(25, 135, 84, 0.1);
+            --warning-soft: rgba(255, 193, 7, 0.1);
+            --info-soft: rgba(13, 202, 240, 0.1);
+            --danger-soft: rgba(220, 53, 69, 0.1);
+            --whatsapp-color: #25D366;
+        }
+
+        .text-primary-dark {
+            color: var(--primary-dark);
+        }
+
+        .bg-primary-soft {
+            background-color: var(--primary-soft);
+        }
+
+        .bg-success-soft {
+            background-color: var(--success-soft);
+        }
+
+        .bg-warning-soft {
+            background-color: var(--warning-soft);
+        }
+
+        .bg-info-soft {
+            background-color: var(--info-soft);
+        }
+
+        .bg-danger-soft {
+            background-color: var(--danger-soft);
+        }
+
+        .text-white-soft {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Gradientes */
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        }
+
+        .bg-gradient-success {
+            background: linear-gradient(135deg, var(--success-color) 0%, var(--success-dark) 100%);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .btn-whatsapp {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--whatsapp-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.1);
+            background-color: #20b858;
+        }
+
+        .tooltip-text {
+            position: absolute;
+            right: 70px;
+            background-color: #333;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .btn-whatsapp:hover .tooltip-text {
+            opacity: 1;
+        }
+
+        /* Premium CTA Section */
+        .premium-badge {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .premium-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .premium-features li {
+            color: white;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .premium-features li i {
+            color: #ffc107;
+        }
+
+        .premium-card {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-20px);
+        }
+
+        .pricing-value {
+            font-size: 1.2rem;
+        }
+
+        .pricing-value .amount {
+            font-size: 2.5rem;
+        }
+
+        .pricing-original {
+            font-size: 0.9rem;
+        }
+
+        /* Estilização do vídeo */
+        .video-container {
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-container:hover {
+            transform: scale(1.02);
+        }
+
+        .rounded-4 {
+            border-radius: 1rem !important;
+        }
+
+        /* Card Hover Effects */
+        .hover-shadow {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+        /* Module Icons */
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .module-icon-1 {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        }
+
+        .module-icon-2 {
+            background: linear-gradient(135deg, #2196F3, #1565C0);
+        }
+
+        .module-icon-3 {
+            background: linear-gradient(135deg, #9C27B0, #6A1B9A);
+        }
+
+        .module-icon-4 {
+            background: linear-gradient(135deg, #FF9800, #EF6C00);
+        }
+
+        /* Feature Icons */
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Novas Estilizações Premium */
+        .premium-feature-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            border: 1px solid transparent !important;
+        }
+
+        .premium-feature-card:hover {
+            transform: translateY(-12px);
+            background: white !important;
+            border-color: rgba(13, 110, 253, 0.1) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .premium-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease;
+        }
+
+        .premium-feature-card:hover .premium-icon-wrapper {
+            transform: rotateY(180deg);
+        }
+
+        .shadow-success {
+            box-shadow: 0 10px 20px rgba(25, 135, 84, 0.3);
+        }
+
+        .shadow-primary {
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        .shadow-warning {
+            box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* APA System Styles */
+        .apa-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .apa-feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .apa-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .apa-demo {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .apa-demo:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* CTA Benefits */
+        .benefit-item {
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .cta-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Counter Animation */
+        .counter {
+            animation: countUp 2s ease-out;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Icon Circles */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* Accordion Styling */
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-soft);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(13, 110, 253, 0.25);
+        }
+
+        /* Hero Badge */
+        .feature-badge {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            font-weight: 500;
+        }
+
+        /* Feature Box */
+        .feature-box {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .icon-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+
+            .premium-card {
+                transform: translateY(0);
+                margin-top: 20px;
+            }
+
+            .btn-whatsapp {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            /* Ajustes para mobile - Hero Section */
+            .hero-section .position-relative {
+                margin-top: 2rem;
+            }
+
+            .hero-section img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .hero-section .col-lg-6:last-child {
+                margin-top: 2rem;
+            }
+
+            .feature-badge {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+
+            .feature-badge.position-absolute.top-0.end-0 {
+                top: -10px !important;
+                right: -10px !important;
+            }
+
+            .feature-badge.position-absolute.bottom-0.start-0 {
+                bottom: -10px !important;
+                left: -10px !important;
+            }
+        }
+
+        .testimonial-image-card {
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 10px;
+        }
+
+        .testimonial-image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-image-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #007bff, #00ff88, #007bff);
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        .testimonial-image-card img {
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-image-card:hover img {
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        @keyframes borderGlow {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Animações para títulos dinâmicos */
+        .animate-title {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .typewriter-text {
+            border-right: 3px solid #ffc107;
+            white-space: normal;
+            overflow: hidden;
+            animation: blink 1s infinite;
+            line-height: 1.4;
+            min-height: 3rem;
+            position: relative;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                border-color: transparent;
+            }
+
+            51%,
+            100% {
+                border-color: #ffc107;
+            }
+        }
+    </style>
+
+    <!-- FAQ -->
+    <div class="faq-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold">Perguntas Frequentes</h2>
+                    <p class="lead text-muted">Tire as suas dúvidas sobre o TCC Collab</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border rounded-3 shadow-sm">
+                            <h2 class="accordion-header" id="faqOne">
+                                <button class="accordion-button rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Posso usar o TCC Collab para qualquer tipo de TCC?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-dark">
+                                    Sim! O TCC Collab foi projectado para suportar diferentes tipos de trabalhos
+                                    académicos,
+                                    incluindo <b>monografias, artigos científicos, projectos práticos e
+                                        dissertações</b>.
+                                    Nosso foco é proporcionar uma metodologia eficaz que acelere o desenvolvimento do
+                                    seu
+                                    trabalho académico, independente do formato.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded-3 shadow-sm">
+                            <h2 class="accordion-header" id="faqTwo">
+                                <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Em quanto tempo posso terminar meu TCC usando a plataforma?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-dark">
+                                    Com nossa metodologia, muitos estudantes conseguem concluir seus trabalhos em tempos
+                                    recordes. Nossa abordagem permite organizar e desenvolver seu TCC de forma
+                                    eficiente,
+                                    podendo reduzir significativamente o tempo de conclusão. No entanto, o ritmo ainda
+                                    depende de diversos factores, como seu tempo disponível e o feedback do seu
+                                    orientador.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded-3 shadow-sm">
+                            <h2 class="accordion-header" id="faqThree">
+                                <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Como o TCC Collab me ajuda com as referências bibliográficas?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-dark">
+                                    Nossa plataforma usa tecnologia <b>R.A.G (Retrieval-Augmented Generation)</b>, o que significa que a IA só escreve baseada em factos e artigos reais que você carrega. Diferente do ChatGPT comum, o TCC Collab não "alucina" nem inventa citações, garantindo 100% de integridade académica e aprovação nos testes de plágio.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded-3 shadow-sm">
+                            <h2 class="accordion-header" id="faqFour">
+                                <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Estou com pouco tempo para finalizar meu TCC, o TCC Collab pode me ajudar?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-dark">
+                                    Absolutamente! O TCC Collab foi concebido especialmente para acelerar o processo de
+                                    desenvolvimento do seu trabalho académico. Com nossa metodologia focada em
+                                    produtividade, estrutura guiada e modelos prontos, você consegue avançar em seu TCC
+                                    mesmo com prazos apertados. Independente do tempo que resta, nosso sistema ajuda
+                                    você a
+                                    dar passos significativos em seu trabalho.
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="accordion-item mb-3 border rounded-3 shadow-sm">
+                            <h2 class="accordion-header" id="faqSix">
+                                <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                    Como funciona o Método 3 Ciclos do TCC Collab?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-dark">
+                                    O Método 3 Ciclos divide o processo em três fases claras: TEMA (definição e
+                                    validação do
+                                    problema), PROJECTO (estruturação e planeamento) e MONOGRAFIA (escrita guiada com
+                                    ordem
+                                    correcta). Cada secção é escrita na sequência certa, garantindo que a Introdução
+                                    seja
+                                    coerente com a Metodologia e que todo o trabalho mantenha consistência do início ao
+                                    fim.
+                                    Além disso, as citações são de autores reais que o Supervisor pode verificar.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final Melhorado -->
+    <div class="cta-section py-5 text-white" style="background: linear-gradient(135deg, #0b1020 0%, #1a237e 100%);">
+        <div class="container position-relative" style="z-index: 10;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="cta-badge bg-warning text-dark mb-3 px-4 py-2 rounded-pill d-inline-block">
+                        <i class="fas fa-fire me-2"></i>Oferta Limitada
+                    </div>
+                    <h2 class="display-5 fw-bold mb-4">Pronto para transformar a experiência do seu TCC?</h2>
+                    <p class="lead mb-4 fs-5">Junte-se a <strong>500+ estudantes</strong> que já estão a concluir os
+                        seus
+                        trabalhos com <strong>sistema APA automático</strong> e <strong>Método 3 Ciclos</strong>.</p>
+
+                    <!-- Benefícios Rápidos -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle text-warning fs-3 mb-2"></i>
+                                <p class="mb-0">APA 7ª Edição Automático</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle text-warning fs-3 mb-2"></i>
+                                <p class="mb-0">Estrutura Guiada Passo a Passo</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle text-warning fs-3 mb-2"></i>
+                                <p class="mb-0">Conclusão em 47 Dias</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                        <a href="#planos-disponiveis" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark">
+                            <i class="fas fa-rocket me-2"></i>Ver Planos e Assinar
+                        </a>
+                        <a href="https://wa.me/258845397259?text=Gostaria%20de%20ter%20detalhes%20da%20Plataforma%20TCC%2047%20Collab!" target="_blank" class="btn btn-outline-light btn-lg px-5 py-3">
+                            <i class="fab fa-whatsapp me-2"></i>Falar com Especialista
+                        </a>
+                    </div>
+
+                    <div class="mt-4">
+                        <small class="text-white-50">
+                            <i class="fas fa-shield-alt me-1"></i>100% Seguro • <i class="fas fa-headset me-1"></i>Suporte
+                            24/7
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Float WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/258843993367?text=Gostaria%20de%20ter%20detalhes%20da%20Plataforma%20TCC%2047%20Collab!" target="_blank" class="btn btn-whatsapp shadow-lg">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip-text">Precisa de ajuda?</span>
+        </a>
+    </div>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <style>
+        /* Testimonials Carousel Styles */
+        .testimonials-swiper {
+            padding: 20px 60px;
+            overflow: visible;
+        }
+
+        .swiper-slide {
+            width: auto !important;
+            height: auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover .testimonial-image {
+            transform: scale(1.05);
+        }
+
+        /* Navigation Buttons */
+        .testimonial-nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+
+        .testimonial-nav-btn::after {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .testimonials-swiper {
+                padding: 20px 40px;
+            }
+
+            .testimonial-card {
+                max-width: 280px;
+            }
+
+            .testimonial-nav-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .testimonial-nav-btn::after {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonials-swiper {
+                padding: 20px 30px;
+            }
+
+            .testimonial-card {
+                max-width: 250px;
+            }
+        }
+    </style>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <script>
+        // Enhanced scroll animation and interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Animate counters on scroll
+            const counters = document.querySelectorAll('.counter');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'countUp 2s ease-out';
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // Add hover effects to feature cards
+            const featureCards = document.querySelectorAll('.feature-card, .step-card, .testimonial-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.15)';
+                });
+            });
+
+            // Initialize Testimonials Swiper
+            const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                centeredSlides: false,
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                speed: 800,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        centeredSlides: true,
+                    },
+                    576: {
+                        slidesPerView: 'auto',
+                        spaceBetween: 20,
+                        centeredSlides: false,
+                    },
+                    768: {
+                        slidesPerView: 'auto',
+                        spaceBetween: 25,
+                    },
+                    992: {
+                        slidesPerView: 'auto',
+                        spaceBetween: 30,
+                    },
+                },
+            });
+
+            // Add click tracking for CTA buttons
+            const ctaButtons = document.querySelectorAll('a[href*="auth.register"], a[href*="whatsapp"]');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Add visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Typewriter effect
+            function typeWriter(element, text, speed = 100) {
+                let i = 0;
+                element.innerHTML = '';
+
+                function type() {
+                    if (i < text.length) {
+                        const char = text.charAt(i);
+                        if (text.substring(i, i + 4) === '<br>') {
+                            element.innerHTML += '<br>';
+                            i += 4;
+                        } else {
+                            element.innerHTML += char;
+                            i++;
+                        }
+                        setTimeout(type, speed);
+                    } else {
+                        // Wait for 3 seconds, then start erasing
+                        setTimeout(erase, 3000);
+                    }
+                }
+
+                function erase() {
+                    if (element.innerHTML.length > 0) {
+                        // Remove the last character or <br> tag
+                        if (element.innerHTML.endsWith('<br>')) {
+                            element.innerHTML = element.innerHTML.slice(0, -4);
+                        } else {
+                            element.innerHTML = element.innerHTML.slice(0, -1);
+                        }
+                        setTimeout(erase, speed / 2); // Erase faster than typing
+                    } else {
+                        // Start typing again after a short pause
+                        setTimeout(() => {
+                            i = 0;
+                            type();
+                        }, 1000);
+                    }
+                }
+
+                type();
+            }
+
+            // Initialize typewriter effect when page loads
+            const typewriterElement = document.getElementById('typewriter');
+            if (typewriterElement) {
+                const text = 'Inteligência e Velocidade para a sua<br>Monografia';
+                // Start typing after a short delay to let the title animation complete
+                setTimeout(() => {
+                    typewriterElement.style.borderRight = '3px solid #ffc107';
+                    typeWriter(typewriterElement, text, 80);
+                }, 1000);
+            }
+        });
+    </script>
+    <style>
+        .play-button-wrapper:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .video-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .video-overlay:hover::before {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        function playVideo(videoID, containerID) {
+            const container = document.getElementById(containerID);
+            const overlay = container.querySelector('.video-overlay');
+            const placeholder = container.querySelector('#video-placeholder-2');
+
+            overlay.style.display = 'none';
+            placeholder.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoID}?autoplay=1&rel=0" title="Depoimento Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-4 w-100 h-100"></iframe>`;
+        }
+    </script>
+    
+    </header></main>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-2"><i class="fas fa-copyright me-2"></i>Todos os Direitos Reservados</p>
+                <p class="mb-2"><i class="fas fa-code me-2"></i>Desenvolvido pela Chasystems Informática Consultoria e
+                    Serviços</p>
+                <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i>2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- CSRF Token -->
+    <script src="js/csrf.js"></script>
+
+    <!-- References JS -->
+    <script src="js/references.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Menu Responsive JS -->
+    <script src="js/menu-responsive.js"></script>
+
+    <!-- Course Protection JS -->
+    <script src="js/course_protection.js"></script>
+
+    <script>
+        // Empurrar conteúdo para baixo quando o menu mobile estiver aberto
+        (function () {
+            const navbar = document.querySelector('nav.navbar');
+            const collapseEl = document.getElementById('navbarNav');
+            if (!navbar || !collapseEl) return;
+
+            collapseEl.addEventListener('show.bs.collapse', function () {
+                // Usa scrollHeight para calcular a altura total do conteúdo do menu
+                const height = collapseEl.scrollHeight || 0;
+                navbar.style.marginBottom = (height + 12) + 'px';
+            });
+
+            collapseEl.addEventListener('shown.bs.collapse', function () {
+                // Em alguns casos a altura final só é conhecida após animação
+                const height = collapseEl.scrollHeight || 0;
+                navbar.style.marginBottom = (height + 12) + 'px';
+            });
+
+            collapseEl.addEventListener('hide.bs.collapse', function () {
+                navbar.style.marginBottom = '0px';
+            });
+
+            collapseEl.addEventListener('hidden.bs.collapse', function () {
+                navbar.style.marginBottom = '0px';
+            });
+        })();
+
+        // Exibir aviso de melhor experiência em telas pequenas (mobile)
+        (function () {
+            const ALERT_KEY = 'mobile_experience_alert_dismissed_v1';
+            const alertEl = document.getElementById('mobile-experience-alert');
+            if (!alertEl) return;
+
+            const shouldShow = () => window.innerWidth < 992 && !localStorage.getItem(ALERT_KEY);
+
+            function showAlert() {
+                if (shouldShow()) {
+                    alertEl.style.display = '';
+                    const bsAlert = new bootstrap.Alert(alertEl);
+                    // Trigger fade-in
+                    alertEl.classList.add('show');
+                    // Persist dismissal
+                    alertEl.addEventListener('closed.bs.alert', () => {
+                        localStorage.setItem(ALERT_KEY, '1');
+                    }, { once: true });
+                } else {
+                    alertEl.style.display = 'none';
+                }
+            }
+
+            // Initial check
+            showAlert();
+            // Update on resize with debounce
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(showAlert, 150);
+            });
+        })();
+    </script>
+
+    
+
+    <!-- Modal de Anúncio Notório (Global) -->
+    
+    
+    <!-- KaTeX JS and Auto-render -->
+    <script defer="" src="js/katex.min.js" crossorigin="anonymous"></script>
+    <script defer="" src="js/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+
+</body></html>
